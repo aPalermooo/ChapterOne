@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="questionText">Canberra is the capital of Australia</string>
+    <string name="correctToast">TRUE</string>
+    <string name="incorrectToast">FALSE</string>
+    <string name="correct">Correct</string>
+    <string name="incorrect">Incorrect</string>
+</resources>

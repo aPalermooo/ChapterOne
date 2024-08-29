@@ -5,8 +5,11 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,25 +27,29 @@ class MainActivity : AppCompatActivity() {
 
         trueButton = findViewById(R.id.true_button)
         falseButton = findViewById(R.id.false_button)
+        ////https://developer.android.com/develop/ui/views/notifications/snackbar/action
 
-        //https://developer.android.com/develop/ui/views/notifications/snackbar/action
+        val coordinatorLayout : CoordinatorLayout = findViewById(R.id.main)
+        //https://developer.android.com/reference/androidx/coordinatorlayout/widget/CoordinatorLayout
 
         trueButton.setOnClickListener {
-            Toast.makeText(
-                this,
-                R.string.correct,
-                Toast.LENGTH_LONG
-            )
-                .show()
+            Snackbar.make(
+                coordinatorLayout,
+                "Correct",
+                BaseTransientBottomBar.LENGTH_SHORT
+            ).show()
+
+            //https://developer.android.com/reference/com/google/android/material/snackbar/Snackbar
 
         }
         falseButton.setOnClickListener {
-            Toast.makeText(
-                this,
-                R.string.incorrect,
-                Toast.LENGTH_LONG
-            )
-                .show()
+            Snackbar.make(
+                coordinatorLayout,
+                "Incorrect",
+                BaseTransientBottomBar.LENGTH_SHORT
+            ).show()
+
+            //https://developer.android.com/reference/com/google/android/material/snackbar/Snackbar
 
         }
 
